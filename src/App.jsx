@@ -1,5 +1,6 @@
 import "./styles.css";
 import { useState } from "react";
+
 export default function App() {
   return (
     <div className="App">
@@ -42,5 +43,13 @@ const questions = [
   },
 ];
 function FlashCards() {
-  return <div>TODO</div>;
+  const [item, setItem] = useState(true);
+  function handleClick(e) {}
+  return (
+    <div className="flashcards">
+      {questions.map((e) => (
+        <div onClick={() => setItem(!item)}>{item ? e.question : e.answer}</div>
+      ))}
+    </div>
+  );
 }
